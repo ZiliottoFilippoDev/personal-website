@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#e9eef5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a1120" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="Filippo Ziliotto, AI Researcher at Fondazione Bruno Kessler. Computer vision, embodied AI and robotics.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Filippo Ziliotto">
+  <meta property="og:description" content="AI research, computer vision and robotics.">
+  <title>Filippo Ziliotto</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
+  <script>
+    /* Apply a saved theme before first paint to avoid a flash. */
+    (function (root) {
+      root.classList.add('js');
+      try { const t = localStorage.getItem('theme'); if (t) root.dataset.theme = t; } catch (_) {}
+      /* Failsafe: never leave the entrance hidden if the script does not run. */
+      setTimeout(function () { root.classList.add('is-ready'); }, 2500);
+    })(document.documentElement);
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Ambient layer: a slowly orbiting point cloud of a room, seen by two cameras.
+       Points visible to both cameras are tinted: a nod to co-visibility. -->
+  <div class="ambient" aria-hidden="true">
+    <div class="aura aura-a"></div>
+    <div class="aura aura-b"></div>
+    <canvas id="cloud"></canvas>
+  </div>
+
+  <header class="dock" id="dock">
+    <nav class="dock-bar glass" aria-label="Main">
+      <a class="monogram" href="#top" aria-label="Filippo Ziliotto, back to top">
+        <svg class="fz-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="fzd-t" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c2c48"/><stop offset="1" stop-color="#0b1424"/></linearGradient>
+            <linearGradient id="fzd-d" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fb8ff"/><stop offset="1" stop-color="#4fd1dc"/></linearGradient>
+            <linearGradient id="fzd-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient>
+          </defs>
+          <rect width="64" height="64" rx="18" fill="url(#fzd-t)"/>
+          <rect x="1" y="1" width="62" height="62" rx="17" fill="url(#fzd-g)"/>
+          <g fill="none" stroke="#f4f7fb" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 48V16h34"/><path d="M15 31h11"/><path d="M28 48h21"/></g>
+          <g class="fz-dots" fill="url(#fzd-d)"><circle cx="47.6" cy="18.6" r="3.1"/><circle cx="43.4" cy="24.8" r="2.9"/><circle cx="39.2" cy="31" r="2.7"/><circle cx="35" cy="37.2" r="2.5"/><circle cx="30.8" cy="43.4" r="2.3"/></g>
+        </svg>
+      </a>
+      <span class="lens" aria-hidden="true"></span>
+      <a class="dock-link" href="#about" data-spy="about">About</a>
+      <a class="dock-link" href="#research" data-spy="research">Research</a>
+      <a class="dock-link" href="#career" data-spy="career">Career</a>
+      <a class="dock-link" href="#projects" data-spy="projects">Projects</a>
+      <a class="dock-link dock-cv" href="assets/CV-Filippo-Ziliotto.pdf">CV</a>
+      <span class="dock-sep" aria-hidden="true"></span>
+      <button class="theme-toggle" type="button" aria-label="Switch colour theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle class="sun" cx="12" cy="12" r="4.2"/><path class="rays" d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="about" aria-labelledby="name">
+      <div class="hero-card glass" data-sheen>
+        <div class="hero-head">
+          <img class="portrait" src="assets/filippo-ziliotto.jpg" alt="Portrait of Filippo Ziliotto" width="500" height="500">
+          <div class="hero-id">
+            <p class="affiliation"><span class="live" aria-hidden="true"></span>Fondazione Bruno Kessler</p>
+            <h1 id="name">Filippo Ziliotto</h1>
+            <p class="role">AI Researcher</p>
+          </div>
+        </div>
+        <p class="bio">I build and evaluate computer vision systems, agentic pipelines, and embodied AI systems for robotics. I’m interested in bringing this research approach to industry R&amp;D, from building prototypes to validating them on real-world tasks.</p>
+        <ul class="chips" aria-label="Skills">
+          <li>Computer Vision</li>
+          <li>Multimodal AI</li>
+          <li>Embodied AI &amp; Robotics</li>
+          <li>Model Evaluation</li>
+          <li>Research Software Engineering</li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-primary" href="assets/CV-Filippo-Ziliotto.pdf">Download CV</a>
+          <a class="btn btn-icon" href="mailto:fziliotto@fbk.eu" aria-label="Email" title="Email">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3.5 7.5 8.5 6 8.5-6"/></svg>
+          </a>
+          <a class="btn btn-icon" href="https://www.linkedin.com/in/ziliottofilippodev/" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M19 2H5a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3ZM8.4 18H5.7V9.6h2.7V18ZM7 8.4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3ZM18.3 18h-2.7v-4.1c0-1-.2-2-1.4-2-1.3 0-1.5 1-1.5 2V18H10V9.6h2.6v1.1h.1a2.8 2.8 0 0 1 2.5-1.4c2.7 0 3.1 1.7 3.1 3.9V18Z"/></svg>
+          </a>
+          <a class="btn btn-icon" href="https://scholar.google.com/citations?user=LaioU1YAAAAJ" aria-label="Google Scholar" title="Google Scholar">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m2 9 10-5 10 5-10 5-10-5Zm4 2v5c3.6 3 8.4 3 12 0v-5m4-2v6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="research" id="research" aria-labelledby="research-title">
+      <div class="section-head">
+        <div>
+          <h2 id="research-title">Publications</h2>
+          <p class="section-note">Newest first. Select a paper for details.</p>
+        </div>
+        <div class="section-tools">
+          <div class="segmented glass" role="radiogroup" aria-label="Filter publications" data-segmented="filter">
+            <span class="thumb" aria-hidden="true"></span>
+            <button type="button" role="radio" aria-checked="true" data-value="all">All <span class="count">10</span></button>
+            <button type="button" role="radio" aria-checked="false" data-value="first">First author <span class="count">5</span></button>
+          </div>
+          <div class="pager" hidden>
+            <button class="round glass" type="button" data-step="-1" aria-label="Previous publications" aria-controls="pubs">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6 8.5 12l6 6"/></svg>
+            </button>
+            <button class="round glass" type="button" data-step="1" aria-label="Next publications" aria-controls="pubs">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <ol class="pubs" id="pubs" tabindex="0" aria-label="Publications">
+        <li class="pub glass" data-first="false">
+          <figure class="plate"><img src="assets/figures/observe.webp" alt="Figure 1: what each agent can observe, share, or predict in a household task" loading="lazy" decoding="async"></figure>
+          <div class="pub-meta"><span class="venue is-preprint">Preprint, arXiv</span><time datetime="2026-10-12">Oct 2026</time></div>
+          <h3><button class="pub-open" type="button">Observe, Share, or Predict? Disentangling Partner Information in Embodied Multi-Agent Collaboration</button></h3>
+          <p class="authors">Adrián Szlatincsán, <strong>Filippo Ziliotto</strong>, Bruno Lepri, Luciano Serafini, Massimiliano Luca, Tommaso Campari</p>
+          <div class="pub-links"><a href="https://arxiv.org/abs/2610.16895" data-kind="paper">Paper</a><a href="https://arxiv.org/pdf/2610.16895" data-kind="pdf">PDF</a></div>
+        </li>
+        <li class="pub glass" data-first="false">
+          <figure class="plate"><img src="assets/figures/imprint.webp" alt="Figure 1: image-conditioned queries guide a robot to a requested object" loading="lazy" decoding="async"></figure>
+          <div class="pub-meta"><span class="venue">IROS 2026</span><time datetime="2026-07-27">Jul 2026</time></div>
+          <h3><button class="pub-open" type="button">IMPRINT: Image-Conditioned Query Enrichment for Long-Tail Object Goal Navigation</button></h3>
+          <p class="authors">Jelin Raphael Akkara, <strong>Filippo Ziliotto</strong>, Luciano Serafini, Lamberto Ballan, Tommaso Campari</p>
+          <div class="pub-links"><a href="https://arxiv.org/abs/2607.25106" data-kind="paper">Paper</a><a href="https://arxiv.org/pdf/2607.25106" data-kind="pdf">PDF</a></div>
+        </li>
+        <li class="pub glass" data-first="true">
+          <figure class="plate"><img src="assets/figures/co-vggt.webp" alt="Figure 1: predicting co-visibility between views of a room" loading="lazy" decoding="async"></figure>
+          <div class="pub-meta"><span class="venue">ECCV 2026</span><time datetime="2026-07-10">Jul 2026</time></div>
+          <h3><button class="pub-open" type="button">What VGGT Knows About Overlap: Probing Geometric Foundation Models for Co-Visibility</button></h3>
+          <p class="authors"><strong>Filippo Ziliotto</strong>, Luciano Serafini, Lamberto Ballan, Tommaso Campari</p>
+          <div class="pub-links"><a href="https://arxiv.org/abs/2607.09503" data-kind="paper">Paper</a><a href="https://arxiv.org/pdf/2607.09503" data-kind="pdf">PDF</a></div>
+        </li>
+        <li class="pub glass" data-first="true">
+          <figure class="plate"><img src="assets/figures/personal-3d.webp" alt="Figure 1: personalised navigation and object grounding in 3D environments" loading="lazy" decoding="async"></figure>
+          <div class="pub-meta"><span class="venue">IJCV</span><time datetime="2026-07-04">Jul 2026</time></div>
+          <h3><button class="pub-open" type="button">Personal-3D: A Comprehensive Benchmark for Personalized Embodied AI Agents</button></h3>
+          <p class="authors"><strong>Filippo Ziliotto</strong>, Jelin Raphael Akkara, Alessandro Daniele, Lamberto Ballan, Luciano Serafini, Tommaso Campari</p>
+          <div class="pub-links"><a href="https://doi.org/10.1007/s11263-026-02922-z" data-kind="paper">Paper</a><a href="https://link.springer.com/content/pdf/10.1007/s11263-026-02922-z.pdf" data-kind="pdf">PDF</a></div>
+        </li>
+        <li class="pub glass" data-first="true">
+          <figure class="plate"><img src="assets/figures/mirror.webp" alt="Figure 1: mirror self-recognition in animals and embodied agents" loading="lazy" decoding="async"></figure>
+          <div class="pub-meta"><span class="venue">NeurIPS 2026</span><time datetime="2026-05-09">May 2026</time></div>
+          <h3><button class="pub-open" type="button">Mirror, Mirror on the Wall: Can VLM Agents Tell Who They Are at All?</button></h3>
+          <p class="authors"><strong>Filippo Ziliotto</strong>, Ciro Beneduce, Bruno Lepri, Luciano Serafini, Massimiliano Luca, Tommaso Campari</p>
+          <div class="pub-links"><a href="https://arxiv.org/abs/2605.08816" data-kind="paper">Paper</a><a href="https://arxiv.org/pdf/2605.08816" data-kind="pdf">PDF</a></div>
+        </li>
+        <li class="pub glass" data-first="true">
+          <figure class="plate"><img src="assets/figures/personal.webp" alt="Figure 1: personalised navigation and object grounding tasks" loading="lazy" decoding="async"></figure>
+          <div class="pub-meta"><span class="venue">ICRA 2026</span><time datetime="2025-09-24">Sep 2025</time></div>
+          <h3><button class="pub-open" type="button">PersONAL: Towards a Comprehensive Benchmark for Personalized Embodied Agents</button></h3>
+          <p class="authors"><strong>Filippo Ziliotto</strong>, Jelin Raphael Akkara, Alessandro Daniele, Lamberto Ballan, Luciano Serafini, Tommaso Campari</p>
+          <div class="pub-links"><a href="https://arxiv.org/abs/2509.19843" data-kind="paper">Paper</a><a href="https://arxiv.org/pdf/2509.19843" data-kind="pdf">PDF</a></div>
+        </li>
+        <li class="pub glass" data-first="true">
+          <figure class="plate"><img src="assets/figures/tango.webp" alt="Figure 1: TANGO composes navigation primitives from a user request" loading="lazy" decoding="async"></figure>
+          <div class="pub-meta"><span class="venue">CVPR 2025</span><time datetime="2024-12-05">Dec 2024</time></div>
+          <h3><button class="pub-open" type="button">TANGO: Training-free Embodied AI Agents for Open-world Tasks</button></h3>
+          <p class="authors"><strong>Filippo Ziliotto</strong>, Tommaso Campari, Luciano Serafini, Lamberto Ballan</p>
+          <div class="pub-links"><a href="https://arxiv.org/abs/2412.10402" data-kind="paper">Paper</a><a href="https://arxiv.org/pdf/2412.10402" data-kind="pdf">PDF</a></div>
+        </li>
+        <li class="pub glass" data-first="false">
+          <figure class="plate"><img src="assets/figures/mopl019.webp" alt="Figure 1: heatmap of normalised TDIS beam losses" loading="lazy" decoding="async"></figure>
+          <div class="pub-meta"><span class="venue">IPAC 2023</span><time datetime="2023-09-26">Sep 2023</time></div>
+          <h3><button class="pub-open" type="button">Mitigation of losses at injection protection devices in the CERN LHC</button></h3>
+          <p class="authors">R. Tomas, A. Calia, D. Mirarchi, D. Jacquet, E. Maclean, <strong>F. Ziliotto</strong>, F. Van der Veken, K. Paraschou, L. Deniau, M. D’Andrea, S. Kostoglou, S. Redaelli, T. Persson</p>
+          <div class="pub-links"><a href="https://doi.org/10.18429/JACoW-IPAC2023-MOPL019" data-kind="paper">Paper</a><a href="https://proceedings.jacow.org/ipac2023/pdf/MOPL019.pdf" data-kind="pdf">PDF</a></div>
+        </li>
+        <li class="pub glass" data-first="false">
+          <figure class="plate"><img src="assets/figures/mopl029.webp" alt="Figure 1: simulated and measured lead-ion beam losses" loading="lazy" decoding="async"></figure>
+          <div class="pub-meta"><span class="venue">IPAC 2023</span><time datetime="2023-09-26">Sep 2023</time></div>
+          <h3><button class="pub-open" type="button">Simulations and measurements of collisional losses with Pb beams at the LHC</button></h3>
+          <p class="authors">A. Frasca, A. Abramov, B. Lindstrom, <strong>F. Ziliotto</strong>, M. Patecki, F. Cerutti, F. Van der Veken, R. Cai, L. Esposito, R. Bruce</p>
+          <div class="pub-links"><a href="https://doi.org/10.18429/JACoW-IPAC2023-MOPL029" data-kind="paper">Paper</a><a href="https://proceedings.jacow.org/ipac2023/pdf/MOPL029.pdf" data-kind="pdf">PDF</a></div>
+        </li>
+        <li class="pub glass" data-first="false">
+          <figure class="plate"><img src="assets/figures/tupm119.webp" alt="Figure 1: stored beam energy per fill in 2022" loading="lazy" decoding="async"></figure>
+          <div class="pub-meta"><span class="venue">IPAC 2023</span><time datetime="2023-09-26">Sep 2023</time></div>
+          <h3><button class="pub-open" type="button">Collimation performance of the 400MJ LHC beam at 6.8 TeV</button></h3>
+          <p class="authors">F. Van der Veken, A. Abramov, G. Azzopardi, G. Broggi, R. Bruce, R. Cai, M. D’Andrea, K. Dewhurst, A. Frasca, P. Hermes, B. Lindstrom, D. Mirarchi, S. Redaelli, <strong>F. Ziliotto</strong>, D. Demetriadou</p>
+          <div class="pub-links"><a href="https://doi.org/10.18429/JACoW-IPAC2023-TUPM119" data-kind="paper">Paper</a><a href="https://proceedings.jacow.org/ipac2023/pdf/TUPM119.pdf" data-kind="pdf">PDF</a></div>
+        </li>
+      </ol>
+      <div class="track" aria-hidden="true"><span class="track-fill"></span></div>
+    </section>
+
+    <section class="career" id="career" aria-labelledby="career-title">
+      <div class="section-head">
+        <h2 id="career-title">Career</h2>
+      </div>
+      <div class="career-grid">
+        <div class="career-card glass" data-sheen>
+          <h3 class="card-title">Experience</h3>
+          <ul class="timeline">
+            <li>
+              <img src="assets/logos/fbk.png" alt="" width="44" height="44">
+              <div><p class="when">Oct 2026 – Present</p><h4>AI Researcher</h4><p class="org">Fondazione Bruno Kessler</p><p class="desc">Research on LLM agents and robotics.</p></div>
+            </li>
+            <li>
+              <img src="assets/logos/usi.png" alt="" width="44" height="44">
+              <div><p class="when">Apr – Sep 2026</p><h4>Visiting Researcher</h4><p class="org">Università della Svizzera italiana</p><p class="desc">Computer vision and embodied AI.</p></div>
+            </li>
+            <li>
+              <img src="assets/logos/padua.png" alt="" width="44" height="44">
+              <div><p class="when">2021 – 2024</p><h4>Software Developer</h4><p class="org">University of Padua</p><p class="desc">Developed and maintained <a href="https://github.com/ZiliottoFilippoDev/DIMORA">DIMORA</a>, an R package for modelling how innovations spread.</p></div>
+            </li>
+            <li>
+              <img src="assets/logos/cern.png" alt="" width="44" height="44">
+              <div><p class="when">Mar – Oct 2022</p><h4>Applied Physicist</h4><p class="org">CERN</p><p class="desc">Integrated real-time analysis modules for the LHC collimation system during Run 3.</p></div>
+            </li>
+          </ul>
+        </div>
+        <div class="career-card glass" data-sheen>
+          <h3 class="card-title">Education</h3>
+          <ul class="timeline">
+            <li>
+              <img src="assets/logos/padua.png" alt="" width="44" height="44">
+              <div><p class="when">2023 – 2026</p><h4>PhD, Computer Vision &amp; Embodied AI</h4><p class="org">University of Padua</p><p class="desc">3D perception and language-guided robotics.</p></div>
+            </li>
+            <li>
+              <img src="assets/logos/padua.png" alt="" width="44" height="44">
+              <div><p class="when">2020 – 2023</p><h4>MSc, Physics of Data</h4><p class="org">University of Padua</p><p class="desc">110/110 with honours.</p></div>
+            </li>
+            <li>
+              <img src="assets/logos/padua.png" alt="" width="44" height="44">
+              <div><p class="when">2016 – 2020</p><h4>BSc, Physics</h4><p class="org">University of Padua</p></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects" aria-labelledby="projects-title">
+      <div class="section-head">
+        <div>
+          <h2 id="projects-title">Projects</h2>
+          <p class="section-note">Software I built outside papers.</p>
+        </div>
+      </div>
+      <ul class="project-grid">
+        <li class="pub project glass">
+          <figure class="plate"><img src="assets/figures/campaign-forge.svg" alt="Campaign Forge: choose campaign options on the phone and get a structured prompt" loading="lazy" decoding="async"></figure>
+          <div class="pub-meta"><span class="venue">Flutter app</span><time datetime="2026-04">Apr 2026</time></div>
+          <h3>Campaign Forge</h3>
+          <p class="desc">An offline D&amp;D campaign generator for Android and iOS. Pick setting, tone and structure, and the app builds a ready-to-use campaign prompt on device, in Italian or English.</p>
+          <div class="pub-links"><a href="https://play.google.com/store/apps/details?id=com.fzlabs.campaignforge">Google Play</a><a href="https://github.com/filippoziliotto/campaign_creator">Source</a></div>
+        </li>
+        <li class="pub project glass">
+          <figure class="plate"><img src="assets/figures/dimora.svg" alt="DIMORA: a Bass diffusion model fitted to adoption data" loading="lazy" decoding="async"></figure>
+          <div class="pub-meta"><span class="venue">R package, CRAN</span><time>2021 – 2024</time></div>
+          <h3>DIMORA</h3>
+          <p class="desc">Statistical analysis of innovation diffusion in R: Bass, Generalized Bass, Guseo-Guidolin and UCRCD models, with fitting, diagnostics and forecasts.</p>
+          <div class="pub-links"><a href="https://CRAN.R-project.org/package=DIMORA">CRAN</a><a href="https://github.com/ZiliottoFilippoDev/DIMORA">Source</a></div>
+        </li>
+        <li class="pub project glass">
+          <figure class="plate"><img src="assets/figures/hda.svg" alt="Human Data Analytics: model notebook and live demo" loading="lazy" decoding="async"></figure>
+          <div class="pub-meta"><span class="venue is-preprint">Course project</span></div>
+          <h3>Human Data Analytics</h3>
+          <p class="desc">Exam project for the Human Data Analytics course at the University of Padua: the model code and a live demo, in Jupyter notebooks.</p>
+          <div class="pub-links"><a href="https://github.com/ZiliottoFilippoDev/Human-Data-Analytics/tree/main">Source</a></div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="footer-brand">
+      <svg class="fz-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="fzf-t" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c2c48"/><stop offset="1" stop-color="#0b1424"/></linearGradient>
+            <linearGradient id="fzf-d" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fb8ff"/><stop offset="1" stop-color="#4fd1dc"/></linearGradient>
+            <linearGradient id="fzf-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient>
+          </defs>
+          <rect width="64" height="64" rx="18" fill="url(#fzf-t)"/>
+          <rect x="1" y="1" width="62" height="62" rx="17" fill="url(#fzf-g)"/>
+          <g fill="none" stroke="#f4f7fb" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 48V16h34"/><path d="M15 31h11"/><path d="M28 48h21"/></g>
+          <g class="fz-dots" fill="url(#fzf-d)"><circle cx="47.6" cy="18.6" r="3.1"/><circle cx="43.4" cy="24.8" r="2.9"/><circle cx="39.2" cy="31" r="2.7"/><circle cx="35" cy="37.2" r="2.5"/><circle cx="30.8" cy="43.4" r="2.3"/></g>
+        </svg>
+      <span>© 2026 Filippo Ziliotto</span>
+    </span>
+    <a href="#top">Back to top</a>
+  </footer>
+
+  <!-- Publication detail sheet. Filled from the selected card. -->
+  <dialog class="sheet" id="sheet" aria-labelledby="sheet-title">
+    <div class="sheet-panel glass">
+      <div class="grabber" aria-hidden="true"><span></span></div>
+      <button class="sheet-close round" type="button" aria-label="Close details">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg>
+      </button>
+      <figure class="plate sheet-plate"><img alt=""></figure>
+      <div class="sheet-body">
+        <div class="pub-meta"><span class="venue"></span><time></time></div>
+        <h2 id="sheet-title"></h2>
+        <p class="authors"></p>
+        <div class="sheet-actions">
+          <a class="btn btn-primary" data-kind="paper" href="#">Read paper</a>
+          <a class="btn" data-kind="pdf" href="#">Open PDF</a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>

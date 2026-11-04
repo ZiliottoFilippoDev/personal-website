@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" font-family="Hanken Grotesk, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif">
+<rect width="640" height="400" fill="#fff"/>
+<rect x="40" y="34" width="560" height="332" rx="16" fill="#fff" stroke="#dfe5ee" stroke-width="2"/>
+<rect x="40" y="34" width="560" height="38" rx="16" fill="#f2f5fa"/><rect x="40" y="56" width="560" height="16" fill="#f2f5fa"/>
+<circle cx="62" cy="53" r="5" fill="#dfe5ee"/><circle cx="78" cy="53" r="5" fill="#dfe5ee"/><circle cx="94" cy="53" r="5" fill="#dfe5ee"/>
+<text x="118" y="57.5" font-size="12" font-weight="600" fill="#0f1b2e">model.ipynb</text>
+<text x="58" y="106" font-size="11" fill="#8592a8" font-family="ui-monospace, Menlo, monospace">In [1]</text>
+<rect x="100" y="92" width="236" height="62" rx="8" fill="#f5f7fb"/><rect x="112" y="102" width="150" height="6" rx="3" fill="#cfd8e6"/><rect x="112" y="118" width="190" height="6" rx="3" fill="#e3e8f0"/><rect x="112" y="134" width="120" height="6" rx="3" fill="#cfd8e6"/>
+<text x="58" y="182" font-size="11" fill="#8592a8" font-family="ui-monospace, Menlo, monospace">In [2]</text>
+<rect x="100" y="168" width="236" height="78" rx="8" fill="#f5f7fb"/><rect x="112" y="178" width="200" height="6" rx="3" fill="#cfd8e6"/><rect x="112" y="194" width="140" height="6" rx="3" fill="#e3e8f0"/><rect x="112" y="210" width="176" height="6" rx="3" fill="#cfd8e6"/><rect x="112" y="226" width="110" height="6" rx="3" fill="#e3e8f0"/>
+<text x="58" y="274" font-size="11" fill="#8592a8" font-family="ui-monospace, Menlo, monospace">In [3]</text>
+<rect x="100" y="260" width="236" height="46" rx="8" fill="#f5f7fb"/><rect x="112" y="270" width="164" height="6" rx="3" fill="#cfd8e6"/><rect x="112" y="286" width="96" height="6" rx="3" fill="#e3e8f0"/>
+<rect x="372" y="92" width="210" height="196" rx="10" fill="#fff" stroke="#e3e8f0"/>
+<text x="388" y="114" font-size="11.5" font-weight="700" fill="#0f1b2e">Live demo</text>
+<circle cx="568" cy="110" r="5" fill="#22b573"/>
+<line x1="394" x2="590" y1="262" y2="262" stroke="#e3e8f0"/>
+<path d="M394.0,211.7 L397.3,198.7 L400.6,201.5 L404.0,192.9 L407.3,176.4 L410.6,188.6 L413.9,171.2 L417.3,171.2 L420.6,172.8 L423.9,168.4 L427.2,168.2 L430.5,166.5 L433.9,174.0 L437.2,177.8 L440.5,180.5 L443.8,185.4 L447.2,184.3 L450.5,191.6 L453.8,186.6 L457.1,204.7 L460.4,204.9 L463.8,208.1 L467.1,217.3 L470.4,201.5 L473.7,225.3 L477.1,217.7 L480.4,221.1 L483.7,212.4 L487.0,231.2 L490.3,217.3 L493.7,226.2 L497.0,223.2 L500.3,225.0 L503.6,217.5 L506.9,224.6 L510.3,217.6 L513.6,213.4 L516.9,204.0 L520.2,221.8 L523.6,200.4 L526.9,200.5 L530.2,204.8 L533.5,198.5 L536.8,199.9 L540.2,187.6 L543.5,192.6 L546.8,192.9 L550.1,191.7 L553.5,190.5 L556.8,189.7 L560.1,192.7 L563.4,178.5 L566.7,197.9 L570.1,206.6 L573.4,190.7 L576.7,191.9 L580.0,190.7 L583.4,194.9 L586.7,196.3 L590.0,195.6" fill="none" stroke="#2a5bd7" stroke-width="2.4" stroke-linejoin="round"/>
+<rect x="372" y="300" width="210" height="44" rx="10" fill="#f5f7fb"/>
+<text x="388" y="319" font-size="10.5" fill="#8592a8" font-weight="600">Prediction</text>
+<rect x="388" y="327" width="120" height="7" rx="3.5" fill="#2a5bd7" opacity=".7"/><rect x="512" y="327" width="54" height="7" rx="3.5" fill="#e3e8f0"/>
+</svg>

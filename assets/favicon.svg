@@ -1,0 +1,11 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="fz-t" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c2c48"/><stop offset="1" stop-color="#0b1424"/></linearGradient>
+            <linearGradient id="fz-d" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fb8ff"/><stop offset="1" stop-color="#4fd1dc"/></linearGradient>
+            <linearGradient id="fz-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient>
+          </defs>
+          <rect width="64" height="64" rx="18" fill="url(#fz-t)"/>
+          <rect x="1" y="1" width="62" height="62" rx="17" fill="url(#fz-g)"/>
+          <g fill="none" stroke="#f4f7fb" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 48V16h34"/><path d="M15 31h11"/><path d="M28 48h21"/></g>
+          <g class="fz-dots" fill="url(#fz-d)"><circle cx="47.6" cy="18.6" r="3.1"/><circle cx="43.4" cy="24.8" r="2.9"/><circle cx="39.2" cy="31" r="2.7"/><circle cx="35" cy="37.2" r="2.5"/><circle cx="30.8" cy="43.4" r="2.3"/></g>
+        </svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" font-family="Hanken Grotesk, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a5bd7"/><stop offset="1" stop-color="#6b4fd8"/></linearGradient>
+<filter id="s" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0f1b2e" flood-opacity=".18"/></filter></defs>
+<rect width="640" height="400" fill="#fff"/>
+<g transform="translate(70 22)" filter="url(#s)">
+<rect width="196" height="356" rx="30" fill="#fff" stroke="#dfe5ee" stroke-width="2"/>
+<rect x="74" y="10" width="48" height="6" rx="3" fill="#dfe5ee"/>
+<rect x="14" y="28" width="168" height="62" rx="16" fill="url(#g)"/>
+<text x="28" y="56" font-size="15" font-weight="800" fill="#fff">Campaign Forge</text>
+<text x="28" y="75" font-size="10.5" fill="#fff" opacity=".85">New campaign</text>
+<g transform="translate(24 116)"><g transform="translate(0 0)"><text x="0" y="0" font-size="10.5" fill="#8592a8" font-weight="600">Setting</text>
+<rect x="0" y="7" width="148" height="26" rx="13" fill="#eef2f9"/><text x="12" y="24.5" font-size="11.5" fill="#0f1b2e" font-weight="600">Frontier kingdom</text></g><g transform="translate(0 46)"><text x="0" y="0" font-size="10.5" fill="#8592a8" font-weight="600">Tone</text>
+<rect x="0" y="7" width="148" height="26" rx="13" fill="#eef2f9"/><text x="12" y="24.5" font-size="11.5" fill="#0f1b2e" font-weight="600">Dark, political</text></g><g transform="translate(0 92)"><text x="0" y="0" font-size="10.5" fill="#8592a8" font-weight="600">Length</text>
+<rect x="0" y="7" width="148" height="26" rx="13" fill="#eef2f9"/><text x="12" y="24.5" font-size="11.5" fill="#0f1b2e" font-weight="600">6 sessions</text></g><g transform="translate(0 138)"><text x="0" y="0" font-size="10.5" fill="#8592a8" font-weight="600">Level</text>
+<rect x="0" y="7" width="148" height="26" rx="13" fill="#eef2f9"/><text x="12" y="24.5" font-size="11.5" fill="#0f1b2e" font-weight="600">3 → 8</text></g></g>
+<rect x="24" y="300" width="148" height="34" rx="17" fill="#0f1b2e"/><text x="98" y="321.5" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Generate prompt</text>
+</g>
+<path d="M286 200 C 318 200 322 200 350 200" fill="none" stroke="#2a5bd7" stroke-width="2.4" stroke-linecap="round"/><path d="M342 193 L351 200 L342 207" fill="none" stroke="#2a5bd7" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<g transform="translate(366 92)" filter="url(#s)">
+<rect width="236" height="216" rx="18" fill="#fff" stroke="#dfe5ee" stroke-width="2"/>
+<text x="18" y="32" font-size="12.5" font-weight="700" fill="#0f1b2e">Structured campaign prompt</text>
+<text x="18" y="50" font-size="10.5" fill="#8592a8">Generated on device, offline</text>
+<g transform="translate(18 70)"><rect x="0" y="0" width="196" height="7" rx="3.5" fill="#e3e8f0"/><rect x="0" y="18" width="170" height="7" rx="3.5" fill="#e3e8f0"/><rect x="0" y="36" width="200" height="7" rx="3.5" fill="#e3e8f0"/><rect x="0" y="54" width="150" height="7" rx="3.5" fill="#e3e8f0"/><rect x="0" y="72" width="186" height="7" rx="3.5" fill="#e3e8f0"/><rect x="0" y="90" width="120" height="7" rx="3.5" fill="#e3e8f0"/></g>
+<rect x="18" y="176" width="112" height="24" rx="12" fill="#eef2f9"/><text x="74" y="192" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2a5bd7">Copy prompt</text>
+</g>
+</svg>
